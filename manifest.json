@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "tablist",
+  "short_name": "标签列表",
+  "description": "在窗口左侧以列表方式显示当前窗口所有打开的标签页，对于习惯性打开100个页面的程序员、架构师、CTO来说，太方便了。",
+  "version": "0.0.1",
+  "minimum_chrome_version": "38",
+
+  "icons": {
+    "16": "assets/icon_16.png",
+    "128": "assets/icon_128.png"
+  },
+
+  "background": {
+    "scripts": [ "background.js" ],
+    "persistent": false
+  },
+  
+  "permissions": [
+    "<all_urls>",
+    "storage",
+    "tabs"
+  ],
+  "optional_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"],
+      "js": [
+        "libs/turbolinks.js",
+        "libs/keymaster.js",
+        "libs/underscore-min.js",
+        "libs/jquery-2.2.3.min.js",
+        "main.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
