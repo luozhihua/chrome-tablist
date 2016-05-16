@@ -49,6 +49,7 @@ Render.prototype = {
         case 'del':
         case 'close':
           _this.sendMsg(action, tab);
+          event.stopPropagation();
           break;
           
         default:
@@ -164,7 +165,7 @@ Render.prototype = {
     var compile = _.template(this.template);
     var html = compile({tabs: tabs});
     
-    this.show();
+    this.hide();
     this.resize(this.width);
     this.$tablist.find('.tablist-main').html(html);
     this.$tablist.appendTo('body');

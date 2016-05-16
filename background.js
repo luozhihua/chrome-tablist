@@ -52,7 +52,7 @@ Tablist.prototype = {
    * 移除Tab
    */
   removeTab : function (tab) {
-    chrome.tabs.remove({tabs: tab.id});
+    chrome.tabs.remove(tab.id);
   },
   
   /**
