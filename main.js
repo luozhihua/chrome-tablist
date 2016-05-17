@@ -166,7 +166,6 @@ Render.prototype = {
     var html = compile({tabs: tabs});
     
     this.hide();
-    this.resize(this.width);
     this.$tablist.find('.tablist-main').html(html);
     this.$tablist.appendTo('body');
   }
